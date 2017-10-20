@@ -1,3 +1,12 @@
+/*
+Yonatan Mengesha
+Java Boot Camp
+
+
+ */
+
+
+
 package com.company;
 
 import java.util.ArrayList;
@@ -46,6 +55,12 @@ public class Main {
 
              System.out.println ("Do you want to Enter Another Educational Achievement?(yes/no)" );
              answer=keyboard.nextLine ();
+
+             if(!answer.equalsIgnoreCase ( "yes" )&&!answer.equalsIgnoreCase ( "No" ))
+             {
+                 System.out.println ("Invalid Entry Please Enter yes/No" );
+             }
+
              educationalList.add ( person.getEducationalAchivement () );
 
          }while(answer.equalsIgnoreCase ( "yes" ));
