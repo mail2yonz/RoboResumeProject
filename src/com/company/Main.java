@@ -81,7 +81,7 @@ public class Main {
 
                  for(int count=0;count<dutyList.size ();count++)
                  {
-                   duty=  "* "+duty +"\n" +"* " + dutyList.get ( count )+"\n ";
+                   duty=  duty +"\n" +"* " + dutyList.get ( count )+"\n ";
                  }
 
                  System.out.println ("Do you want to Add more Duties?(yes/No)" );
