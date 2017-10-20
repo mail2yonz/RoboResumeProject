@@ -129,6 +129,7 @@ public class Main {
         System.out.println (person.getEmailAddress () );
         System.out.println ( );
         System.out.println ("Education" );
+        //for each loop for education list
         for(String edu:educationalList)
         {
 
