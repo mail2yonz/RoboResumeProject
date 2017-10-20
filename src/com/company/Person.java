@@ -5,7 +5,7 @@ public class Person {
     private String emailAddress;
     private String educationalAchivement;
     private String experiance;
-    private int skillRating;
+    private String skillRating;
 
     public String getName() {
         return name;
@@ -39,11 +39,11 @@ public class Person {
         this.experiance = experiance;
     }
 
-    public int getSkillRating() {
+    public String getSkillRating() {
         return skillRating;
     }
 
-    public void setSkillRating(int skillRating) {
+    public void setSkillRating(String skillRating) {
         this.skillRating = skillRating;
     }
 }

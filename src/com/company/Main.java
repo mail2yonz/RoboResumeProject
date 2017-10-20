@@ -8,12 +8,16 @@ public class Main {
     static Person person;
     static ArrayList<String> educationalList;
     static ArrayList<String> experianceList;
+    static ArrayList<String> skillList;
+    static ArrayList<String> dutyList;
     public static void main(String[] args) {
 	// write your code here
 
-        String answer="yes";
+        String answer;
         educationalList=new ArrayList<> ();
         experianceList= new ArrayList<>();
+        skillList=new ArrayList<> ();
+        dutyList=new ArrayList<>();
 
         person= new Person();
         Scanner keyboard= new Scanner (System.in);
@@ -27,8 +31,18 @@ public class Main {
 
 
          do{
-             System.out.print ("Enter the Persons Educational Achievement: " );
-             person.setEducationalAchivement ( keyboard.nextLine () );
+             System.out.print ("Enter the Persons Educational Title or Type: " );
+             String title=keyboard.nextLine ();
+
+             System.out.print("Enter the university you graduated from: " );
+              String university=keyboard.nextLine ();
+
+             System.out.print ("Enter the year of graduation: " );
+             String year=keyboard.nextLine ();
+
+             String ansKeyboard= title +"\n" +university+", " +year;
+
+             person.setEducationalAchivement ( ansKeyboard );
 
              System.out.println ("Do you want to Enter Another Educational Achievement?(yes/no)" );
              answer=keyboard.nextLine ();
@@ -38,8 +52,25 @@ public class Main {
 
 
          do{
-             System.out.print ("Enter the Persons Experience : " );
-             person.setExperiance ( keyboard.nextLine () );
+             System.out.print ("Enter the Persons Experience Title: " );
+             String title=keyboard.nextLine ();
+
+             System.out.print ("Enter the  Company the person worked for: " );
+             String company=keyboard.nextLine ();
+
+             String duty;
+             do{
+                 System.out.println ("Enter Duties of the Person At that company " );
+                 duty= keyboard.nextLine ();
+
+                 System.out.println ("Do you want to Add more Duties?(yes/No)" );
+                 answer =keyboard.nextLine ();
+                 dutyList.add ( duty );
+
+             }while(answer.equalsIgnoreCase ( "yes" ));
+
+             String ansKeyboard= title +"\n" +company +"\n" + dutyList;
+             person.setExperiance ( ansKeyboard );
 
              System.out.println ("Do you want to Enter another Experience?(Yes/No)" );
              answer= keyboard.nextLine ();
@@ -48,9 +79,15 @@ public class Main {
          }while(answer.equalsIgnoreCase ( "yes" ));
 
 
+        do{
+            System.out.print ("Enter the Persons Skills with rating: " );
+            person.setSkillRating ( keyboard.nextLine () );
 
-        System.out.print ("Enter the Persons Skills with rating: " );
-        person.setSkillRating ( keyboard.nextInt () );
+            System.out.println ("Do you want to Enter another Skill?(yes/no)" );
+            answer=keyboard.nextLine ();
+            skillList.add(person.getSkillRating ());
+
+        }while(answer.equalsIgnoreCase ( "yes" ));
 
          printing();
 
@@ -69,6 +106,7 @@ public class Main {
         {
 
         System.out.println (edu );
+        System.out.println ( );
         }
 
         System.out.println ( );
@@ -77,12 +115,17 @@ public class Main {
         for(String exp:experianceList)
         {
             System.out.println (exp );
+            System.out.println ( );
         }
 
 
 
         System.out.println ( );
         System.out.println ("Skills" );
-        System.out.println (person.getSkillRating () );
+        for(String skills:skillList)
+        {
+            System.out.println (skills);
+        }
+
     }
 }
