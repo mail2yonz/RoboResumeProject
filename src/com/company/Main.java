@@ -2,7 +2,7 @@
 Yonatan Mengesha
 Java Boot Camp
 
-
+java challenge 2
  */
 
 
@@ -38,7 +38,7 @@ public class Main {
         System.out.print ("Enter the Persons Email: " );
         person.setEmailAddress ( keyboard.nextLine () );
 
-
+      //Do while loop To enter about the person
          do{
              System.out.print ("Enter the Persons Educational Title or Type: " );
              String title=keyboard.nextLine ();
