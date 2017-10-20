@@ -63,7 +63,7 @@ public class Main {
 
              educationalList.add ( person.getEducationalAchivement () );
 
-         }while(answer.equalsIgnoreCase ( "yes" ));
+         }while(answer.equalsIgnoreCase ( "yes" )&& !answer.equalsIgnoreCase ( "No" ));
 
 
          do{
@@ -74,9 +74,15 @@ public class Main {
              String company=keyboard.nextLine ();
 
              String duty;
+             //do while loop to enter the duties of the person
              do{
-                 System.out.println ("Enter Duties of the Person At that company " );
+                 System.out.print ("Enter Duties of the Person At that company " );
                  duty= keyboard.nextLine ();
+
+                 for(int count=0;count<dutyList.size ();count++)
+                 {
+                   duty=  "* "+duty +"\n" +"* " + dutyList.get ( count )+"\n ";
+                 }
 
                  System.out.println ("Do you want to Add more Duties?(yes/No)" );
                  answer =keyboard.nextLine ();
@@ -84,7 +90,9 @@ public class Main {
 
              }while(answer.equalsIgnoreCase ( "yes" ));
 
-             String ansKeyboard= title +"\n" +company +"\n" + dutyList;
+             String ansKeyboard="\n"+ title +"\n" +company +"\n" + duty;
+
+
              person.setExperiance ( ansKeyboard );
 
              System.out.println ("Do you want to Enter another Experience?(Yes/No)" );
@@ -94,6 +102,7 @@ public class Main {
          }while(answer.equalsIgnoreCase ( "yes" ));
 
 
+         //a do while loop for the skill to let us enter more skills
         do{
             System.out.print ("Enter the Persons Skills with rating: " );
             person.setSkillRating ( keyboard.nextLine () );
@@ -104,11 +113,14 @@ public class Main {
 
         }while(answer.equalsIgnoreCase ( "yes" ));
 
+        //calling the printing method
          printing();
 
 
 
     }
+
+    //This lets us see the output
     public static void printing()
     {
         //Person person = new Person();
